@@ -1,0 +1,65 @@
+{
+  "policy" : {
+    "name" : "AWS ALB - Elevated Load Balancer Error Rate",
+    "description" : "This is an error rate policy looking at errors from the Load Balancer itself.  In this case, we look for both high traffic volumes (> 1000) as well as error rates that are not just higher than normal, but are above a 2% threshold. In those cases, a Critical event will be generated. You may wish to tune either the 1,000 request count threshold, the 2% error threshold, or both, to better suit your environment.",
+    "scope" : {
+      "elementName" : null,
+      "elementNameExclude" : null,
+      "fqnIncludes" : [ ],
+      "fqnExcludes" : [ ],
+      "elementType" : null,
+      "elementTypes" : [ "ALB" ],
+      "elementTags" : { },
+      "elementAttributes" : [ ]
+    },
+    "duration" : 900,
+    "conditions" : [ {
+      "metric" : "netuitive.aws.alb.httpcodeelberrorpercent",
+      "wildcard" : null,
+      "metricScopeTags" : { },
+      "analytic" : "baselineDeviation",
+      "operator" : ">",
+      "level" : null,
+      "level2" : null,
+      "metricThresholdLevel" : null,
+      "metricThresholdAnalytic" : null
+    }, {
+      "metric" : "netuitive.aws.alb.httpcodeelberrorpercent",
+      "wildcard" : null,
+      "metricScopeTags" : { },
+      "analytic" : "contextualDeviation",
+      "operator" : ">",
+      "level" : null,
+      "level2" : null,
+      "metricThresholdLevel" : null,
+      "metricThresholdAnalytic" : null
+    }, {
+      "metric" : "netuitive.aws.alb.httpcodeelberrorpercent",
+      "wildcard" : null,
+      "metricScopeTags" : { },
+      "analytic" : "actual",
+      "operator" : ">=",
+      "level" : 2.0,
+      "level2" : null,
+      "metricThresholdLevel" : null,
+      "metricThresholdAnalytic" : null
+    }, {
+      "metric" : "aws.applicationelb.requestcount",
+      "wildcard" : null,
+      "metricScopeTags" : { },
+      "analytic" : "actual",
+      "operator" : ">=",
+      "level" : 1000.0,
+      "level2" : null,
+      "metricThresholdLevel" : null,
+      "metricThresholdAnalytic" : null
+    } ],
+    "eventConditions" : [ ],
+    "actions" : [ {
+      "type" : "event",
+      "category" : 3
+    } ],
+    "enabled" : true,
+    "deleted" : false
+  }
+}
