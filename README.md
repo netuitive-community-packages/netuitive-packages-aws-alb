@@ -1,4 +1,4 @@
-# netuitive.packages.aws.alb 1.0.0
+# netuitive.packages.aws.alb
 
 For detailed information on this package, please refer to the [online documentation](https://help.netuitive.com/Content/Integrations/aws.htm).
 
