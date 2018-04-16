@@ -1,0 +1,23 @@
+{
+  "analyticConfiguration" : {
+    "tenantId" : null,
+    "type" : "COMPUTED_METRIC",
+    "id" : null,
+    "packageId" : null,
+    "name" : "AWS Target Group",
+    "scope" : {
+      "elementName" : null,
+      "elementType" : "Target Group",
+      "elementTags" : null,
+      "metricMatches" : null
+    },
+    "metrics" : [ {
+        "match": "netuitive.http.successpercent",
+        "properties": {
+          "cml": "${aws.applicationelb.httpcode_target_2xx_count}.sum / 100 * (${aws.applicationelb.requestcount}.sum - ${aws.applicationelb.httpcode_target_3xx_count}.sum - ${aws.applicationelb.httpcode_target_4xx_count}.sum)",
+          "fqn": "netuitive.http.successpercent",
+          "name": "HTTP Success Rate"
+        }
+      } ]
+  }
+}
