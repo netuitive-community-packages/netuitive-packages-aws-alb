@@ -12,10 +12,10 @@
       "metricMatches" : null
     },
     "metrics" : [ {
-        "match": "netuitive.http.successpercent",
+        "match": "netuitive.aws.applicationelb.httpsuccesspercent",
         "properties": {
           "cml": "${aws.applicationelb.httpcode_target_2xx_count}.sum / 100 * (${aws.applicationelb.requestcount}.sum - ${aws.applicationelb.httpcode_target_3xx_count}.sum - ${aws.applicationelb.httpcode_target_4xx_count}.sum)",
-          "fqn": "netuitive.http.successpercent",
+          "fqn": "netuitive.aws.applicationelb.httpsuccesspercent",
           "name": "HTTP Success Rate"
         }
       } ]
