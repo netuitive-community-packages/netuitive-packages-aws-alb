@@ -18,6 +18,13 @@
           "fqn": "netuitive.aws.applicationelb.httpsuccesspercent",
           "name": "HTTP Success Rate"
         }
+      }, {
+        "match": "netuitive.aws.applicationelb.2xxpercent",
+        "properties": {
+          "cml": "100 * ${aws.applicationelb.httpcode_target_2xx_count}.actual / ${aws.applicationelb.requestcount}.actual",
+          "fqn": "netuitive.aws.applicationelb.2xxpercent",
+          "name": "HTTP 2xx Percent"
+        }
       } ]
   }
 }
