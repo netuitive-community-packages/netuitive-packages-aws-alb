@@ -12,7 +12,7 @@
       "logo" : "http://assets.app.netuitive.com/pkg/logo/netuitive/banner_logo.png",
       "download" : "https://github.com/netuitive-community-packages/netuitive-packages-aws-alb/archive/master.zip"
     },
-    "compatibility" : [ "AWS:ALB" ],
+    "compatibility" : [ "AWS:ALB", "AWS:TargetGroup" ],
     "tags" : [ ],
     "checksum" : null
   },
@@ -36,16 +36,28 @@
       "content" : null
     }
   }, {
-    "data" : {
-      "file" : "analyticConfigurations/computed_metric-aws.alb.json",
-      "encoding" : "application/json",
-      "content" : null
+    "data": {
+      "file": "analyticConfigurations/computed_metric-aws.alb.json",
+      "encoding": "application/json",
+      "content": null
+    }
+  }, {
+    "data": {
+      "file": "analyticConfigurations/computed_metric-aws.tag.json",
+      "encoding": "application/json",
+      "content": null
     }
   }, {
     "data" : {
       "file" : "analyticConfigurations/metric_meta-aws.alb.json",
       "encoding" : "application/json",
       "content" : null
+    }
+  }, {
+    "data": {
+      "file": "analyticConfigurations/metric_meta-aws.tag.json",
+      "encoding": "application/json",
+      "content": null
     }
   } ],
   "dashboards" : [ {
