@@ -4,7 +4,14 @@ For detailed information on this package, please refer to the [online documentat
 
 ## Release History
 
+### Version next
+
+### Version 1.1.0
+
+* Add Target Group compatibility and ACS configs
+* Updating validation to use metricly-cli
+* Adding build notifications
+
 ### Version 1.0.0
 
 * Initial production release of the package for monitoring AWS Application Load Balancer (ALB) resources.
-
