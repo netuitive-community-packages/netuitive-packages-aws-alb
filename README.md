@@ -6,6 +6,8 @@ For detailed information on this package, please refer to the [online documentat
 
 ### Version next
 
+### Version 1.1.0
+
 * Add Target Group compatibility and ACS configs
 * Updating validation to use metricly-cli
 * Adding build notifications
