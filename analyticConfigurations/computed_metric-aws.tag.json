@@ -42,14 +42,14 @@
       } , {
         "match" : "netuitive.aws.applicationelb.totalhttperrors",
         "properties" : {
-          "cml": "${aws.applicationelb.httpcode_target_4xx_count}.actual + ${aws.applicationelb.httpcode_target_5xx_count}.actual",
+          "expression" : "data['aws.applicationelb.httpcode_target_4xx_count'] == null ? 0 + (data['aws.applicationelb.httpcode_target_5xx_count'] == null ? 0 : data['aws.applicationelb.httpcode_target_5xx_count'].actual) : data['aws.applicationelb.httpcode_target_4xx_count'].actual + (data['aws.applicationelb.httpcode_target_5xx_count'] == null ? 0 : data['aws.applicationelb.httpcode_target_5xx_count'].actual)",
           "fqn" : "netuitive.aws.applicationelb.totalhttperrors",
           "name" : "Total HTTP Errors"
         }
       }, {
         "match" : "netuitive.aws.applicationelb.httpcodeerrorpercent",
         "properties" : {
-          "cml": "100 * ${netuitive.aws.applicationelb.totalhttperrors}.actual / ${aws.applicationelb.requestcount}.actual",
+          "expression" : "data['aws.applicationelb.requestcount'].actual == 0 ? 0 : 100 * (data['netuitive.aws.applicationelb.totalhttperrors'].actual / data['aws.applicationelb.requestcount'].actual)",
           "fqn" : "netuitive.aws.applicationelb.httpcodeerrorpercent",
           "name" : "HTTP Error Percent"
         }
