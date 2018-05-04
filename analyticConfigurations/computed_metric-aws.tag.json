@@ -49,7 +49,7 @@
       }, {
         "match" : "netuitive.aws.applicationelb.httpcodeerrorpercent",
         "properties" : {
-          "cml": "100 * ${netuitive.aws.alb.totalelbhttperrors}.actual / ${aws.applicationelb.requestcount}.actual",
+          "cml": "100 * ${netuitive.aws.applicationelb.totalhttperrors}.actual / ${aws.applicationelb.requestcount}.actual",
           "fqn" : "netuitive.aws.applicationelb.httpcodeerrorpercent",
           "name" : "HTTP Error Percent"
         }
