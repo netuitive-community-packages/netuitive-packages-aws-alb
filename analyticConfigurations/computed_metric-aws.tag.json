@@ -42,7 +42,7 @@
       } , {
         "match" : "netuitive.aws.applicationelb.totalhttperrors",
         "properties" : {
-          "cml": "${aws.applicationelb.httpcode_elb_4xx_count}.actual + ${aws.applicationelb.httpcode_elb_5xx_count}.actual",
+          "cml": "${aws.applicationelb.httpcode_target_4xx_count}.actual + ${aws.applicationelb.httpcode_target_5xx_count}.actual",
           "fqn" : "netuitive.aws.applicationelb.totalhttperrors",
           "name" : "Total HTTP Errors"
         }
