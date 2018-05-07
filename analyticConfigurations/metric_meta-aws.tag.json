@@ -43,7 +43,7 @@
         "sparseDataStrategy" : "ReplaceWithLast"
       }
     }, {
-      "match" : "netuitive.aws.applicationelb.httpsuccesspercent",
+      "match" : "netuitive.aws.applicationelb\\..*percent",
       "properties" : {
         "tags" : {
           "unit" : "percent"
