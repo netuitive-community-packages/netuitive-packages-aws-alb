@@ -19,11 +19,11 @@
           "name": "HTTP Success Rate"
         }
       }, {
-        "match": "netuitive.aws.applicationelb.httpnonerrorpercent",
+        "match": "netuitive.aws.applicationelb.servicereliabilityindex",
         "properties": {
-          "cml": "100 * ${aws.applicationelb.httpcode_target_2xx_count}.actual / (${aws.applicationelb.httpcode_target_2xx_count}.actual + ${aws.applicationelb.httpcode_target_5xx_count}.actual)",
-          "fqn": "netuitive.aws.applicationelb.httpnonerrorpercent",
-          "name": "HTTP Non-Error Rate"
+          "cml": "100 * ${aws.applicationelb.httpcode_target_2xx_count}.actual / (${aws.applicationelb.requestcount}.actual - ${aws.applicationelb.httpcode_target_3xx_count}.actual - ${aws.applicationelb.httpcode_target_4xx_count}.actual)",
+          "fqn": "netuitive.aws.applicationelb.servicereliabilityindex",
+          "name": "Service Reliability Index"
         }
       }, {
         "match": "netuitive.aws.applicationelb.2xxpercent",
