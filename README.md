@@ -6,7 +6,7 @@ For detailed information on this package, please refer to the [online documentat
 
 ### Version next
 
-* Add a Target Group non-error computed metric
+* Add a Target Group Service Reliability Index computed metric
 
 ### Version 1.2.0
 
