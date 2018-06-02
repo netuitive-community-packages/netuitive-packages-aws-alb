@@ -6,6 +6,8 @@ For detailed information on this package, please refer to the [online documentat
 
 ### Version next
 
+* Add a Target Group Service Reliability Index computed metric
+
 ### Version 1.2.0
 
 * Add 4xx error percent, 5xx error percent, total errors, and error percentage as computed metrics for Target Groups
