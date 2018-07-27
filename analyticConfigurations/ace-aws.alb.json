@@ -4,10 +4,10 @@
     "type" : "ACE",
     "id" : null,
     "packageId" : null,
-    "name" : "AWS ELB",
+    "name" : "AWS ALB",
     "scope" : {
       "elementName" : null,
-      "elementType" : "ELB",
+      "elementType" : "ALB",
       "elementTags" : null,
       "metricMatches" : null
     },
