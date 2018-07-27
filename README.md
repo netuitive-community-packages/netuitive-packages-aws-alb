@@ -6,6 +6,8 @@ For detailed information on this package, please refer to the [online documentat
 
 ### Version next
 
+* Correct ACE configuration scope entry
+
 ### Version 1.3.0
 
 * Add a Target Group Service Reliability Index computed metric
