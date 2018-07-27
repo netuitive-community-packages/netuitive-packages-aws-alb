@@ -1,30 +1,19 @@
 {
   "policy": {
     "actions": [{
-        "category": 3,
-        "type": "event"
-      },
-      {
-        "enabled": true,
-        "id": 54829,
-        "notifyFrequencyMin": 5,
-        "sendOnClear": true,
-        "type": "notification"
-      }
-    ],
+      "category": 3,
+      "type": "event"
+    }],
     "conditions": [{
       "analytic": "suddenDeviation",
       "level": 10.0,
       "metric": "aws.applicationelb.targetresponsetime",
       "operator": "<"
     }],
-    "creatorEmail": "research@netuitive.com",
-    "deleted": false,
+    "creatorEmail": "research@metricly.com",
     "description": "This policy will generate a Critical event when average target response time has a sudden change exceeding 10%.",
     "duration": 300,
     "enabled": true,
-    "id": "fde8f13c-d60c-3374-baa3-6030e4bd67b2",
-    "lastUpdated": 1532711389402,
     "name": "AWS ALB - Sudden Decrease Target Response Time",
     "scope": {
       "elementAttributesAll": true,

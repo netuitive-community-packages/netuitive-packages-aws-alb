@@ -6,8 +6,6 @@ For detailed information on this package, please refer to the [online documentat
 
 ### Version next
 
-### Version 1.3.1
-
 * Correct ACE configuration scope entry
 * Updated policies for sudden change of load balancer errors, target response time, and request counts
 
