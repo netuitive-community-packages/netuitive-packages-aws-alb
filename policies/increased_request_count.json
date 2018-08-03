@@ -6,20 +6,21 @@
     }],
     "conditions": [{
       "analytic": "suddenDeviation",
-      "level": 10.0,
+      "level": 40.0,
       "metric": "aws.applicationelb.requestcount",
       "operator": ">"
     }],
     "creatorEmail": "research@metricly.com",
-    "duration": 300,
-    "description": "This policy will generate a Critical event when average request count has a sudden change exceeding 10%.",
+    "description": "This policy will generate a Critical alert when average request count has a sudden change exceeding 40%. You may wish to tune percentage change threshold to better suit your environment.",
+    "duration": 600,
     "enabled": true,
     "name": "AWS ALB - Sudden Increase Request Count",
     "scope": {
       "elementAttributesAll": true,
       "elementTagsAll": true,
       "elementTypes": [
-        "ALB"
+        "ALB",
+        "Target Group"
       ]
     }
   }

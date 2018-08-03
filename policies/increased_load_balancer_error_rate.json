@@ -6,12 +6,17 @@
     }],
     "conditions": [{
       "analytic": "suddenDeviation",
-      "level": 10.0,
+      "level": 40.0,
+      "metric": "netuitive.aws.alb.httpcodeelberrorpercent",
+      "operator": ">"
+    }, {
+      "analytic": "actual",
+      "level": 1.0,
       "metric": "netuitive.aws.alb.httpcodeelberrorpercent",
       "operator": ">"
     }],
     "creatorEmail": "research@metricly.com",
-    "description": "This is an error rate policy looking at errors from the Load Balancer itself.  Looking for a sudden change in error rates that exceed 10%. In those cases, a Critical event will be generated. You may wish to tune percentage increase threshold to better suit your environment.",
+    "description": "This policy will generate a Critial alert for a sudden change in error rates that exceed 40%. You may wish to tune percentage change threshold to better suit your environment.",
     "duration": 300,
     "enabled": true,
     "name": "AWS ALB - Sudden Increase Load Balancer Error Rate",
@@ -19,7 +24,8 @@
       "elementAttributesAll": true,
       "elementTagsAll": true,
       "elementTypes": [
-        "ALB"
+        "ALB",
+        "Target Group"
       ]
     }
   }
