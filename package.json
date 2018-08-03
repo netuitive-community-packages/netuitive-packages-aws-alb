@@ -72,5 +72,11 @@
       "encoding" : "application/json",
       "content" : null
     }
+  }, {
+    "data" : {
+      "file" : "dashboards/aws.tag.element.detail.json",
+      "encoding" : "application/json",
+      "content" : null
+    }
   } ]
 }

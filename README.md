@@ -7,6 +7,7 @@ For detailed information on this package, please refer to the [online documentat
 ### Version next
 
 * Correct ACE configuration scope entry
+* Add an element detail dashboard for Target Groups
 
 ### Version 1.3.0
 
