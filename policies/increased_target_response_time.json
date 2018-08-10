@@ -10,13 +10,18 @@
       "metric": "aws.applicationelb.targetresponsetime",
       "operator": ">"
     }, {
+      "analytic": "suddenDeviation",
+      "level": 30.0,
+      "metric": "aws.applicationelb.requestcount",
+      "operator": "<"
+    }, {
       "analytic": "actual",
       "level": 0.1,
       "metric": "aws.applicationelb.targetresponsetime",
       "operator": ">="
     }],
     "creatorEmail": "research@metricly.com",
-    "description": "This policy will generate a Critical alert when average target response time has a sudden change exceeding 40% and a minimum of 100ms. You may wish to tune percentage change threshold to better suit your environment.",
+    "description": "This policy will generate a Critical alert when average target response time has a sudden change exceeding 40% with a minimum of 100ms and request count having a sudden decrease of more than 30%. These conditions should catch cases where the ALB is having trouble serving requests quickly enough such that overall requests decrease.  You may wish to tune percentage change threshold to better suit your environment.",
     "duration": 300,
     "enabled": true,
     "name": "AWS ALB - Sudden Increase Target Response Time",
