@@ -4,7 +4,7 @@ For detailed information on this package, please refer to the [online documentat
 
 ## Release History
 
-### Version next
+### Version 1.4.0
 
 * Correct ACE configuration scope entry
 * Updated policies for sudden change of load balancer errors, target response time, and request counts
