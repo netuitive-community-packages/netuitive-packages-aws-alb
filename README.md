@@ -4,7 +4,16 @@ For detailed information on this package, please refer to the [online documentat
 
 ## Release History
 
-### Version next
+### Version 1.4.0
+
+* Correct ACE configuration scope entry
+* Updated policies for sudden change of load balancer errors, target response time, and request counts
+* Add an element detail dashboard for Target Groups
+* Sudden Increase Target Response Time policy should be conditional on request count decreasing
+
+### Version 1.3.0
+
+* Add a Target Group Service Reliability Index computed metric
 
 ### Version 1.2.0
 
