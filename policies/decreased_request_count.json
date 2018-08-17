@@ -1,15 +1,19 @@
 {
   "policy": {
-    "actions": [{
-      "category": 3,
-      "type": "event"
-    }],
-    "conditions": [{
-      "analytic": "suddenDeviation",
-      "level": 40.0,
-      "metric": "aws.applicationelb.requestcount",
-      "operator": "<"
-    }],
+    "actions": [
+      {
+        "category": 3,
+        "type": "event"
+      }
+    ],
+    "conditions": [
+      {
+        "analytic": "suddenDeviation",
+        "level": 40,
+        "metric": "aws.applicationelb.requestcount",
+        "operator": "<"
+      }
+    ],
     "creatorEmail": "research@metricly.com",
     "description": "This policy will generate a Critical alert when average request count has a sudden change exceeding 40%. You may wish to tune percentage change threshold to better suit your environment.",
     "duration": 600,

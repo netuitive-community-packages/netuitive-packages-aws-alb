@@ -1,136 +1,151 @@
 {
-  "analyticConfiguration" : {
-    "tenantId" : null,
-    "type" : "ACE",
-    "id" : null,
-    "packageId" : null,
-    "name" : "AWS ALB",
-    "scope" : {
-      "elementName" : null,
-      "elementType" : "ALB",
-      "elementTags" : null,
-      "metricMatches" : null
+  "analyticConfiguration": {
+    "metrics": [
+      {
+        "match": "aws.applicationelb.httpcode_target_2xx_count",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "aws.applicationelb.httpcode_target_3xx_count",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "aws.applicationelb.httpcode_target_4xx_count",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "aws.applicationelb.httpcode_target_5xx_count",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "aws.applicationelb.httpcode_elb_4xx_count",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "aws.applicationelb.httpcode_elb_5xx_count",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "aws.applicationelb.healthyhostcount",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "aws.applicationelb.unhealthyhostcount",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "aws.applicationelb.targetresponsetime",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "aws.applicationelb.activeconnectioncount",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "aws.applicationelb.newconnectioncount",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "aws.applicationelb.rejectedconnectioncount",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "aws.applicationelb.targetconnectionerrorcount",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "aws.applicationelb.targettlsnegotiationerrorcount",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "aws.applicationelb.requestcount",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "aws.applicationelb.ruleevaluations",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "aws.applicationelb.consumedlcus",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "aws.applicationelb.processedbytes",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      },
+      {
+        "match": "netuitive.aws.alb.unhealthyhostpercent",
+        "properties": {
+          "baseline": false,
+          "correlation": false
+        }
+      },
+      {
+        "match": "netuitive.aws.alb.httpcodeelberrorpercent",
+        "properties": {
+          "baseline": true,
+          "correlation": true
+        }
+      }
+    ],
+    "name": "AWS ALB",
+    "scope": {
+      "elementType": "ALB"
     },
-    "metrics" : [ {
-      "match" : "aws.applicationelb.httpcode_target_2xx_count",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "aws.applicationelb.httpcode_target_3xx_count",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "aws.applicationelb.httpcode_target_4xx_count",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "aws.applicationelb.httpcode_target_5xx_count",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "aws.applicationelb.httpcode_elb_4xx_count",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "aws.applicationelb.httpcode_elb_5xx_count",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "aws.applicationelb.healthyhostcount",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "aws.applicationelb.unhealthyhostcount",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "aws.applicationelb.targetresponsetime",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "aws.applicationelb.activeconnectioncount",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "aws.applicationelb.newconnectioncount",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "aws.applicationelb.rejectedconnectioncount",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "aws.applicationelb.targetconnectionerrorcount",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "aws.applicationelb.targettlsnegotiationerrorcount",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "aws.applicationelb.requestcount",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "aws.applicationelb.ruleevaluations",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "aws.applicationelb.consumedlcus",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "aws.applicationelb.processedbytes",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    }, {
-      "match" : "netuitive.aws.alb.unhealthyhostpercent",
-      "properties" : {
-        "baseline" : false,
-        "correlation" : false
-      }
-    }, {
-      "match" : "netuitive.aws.alb.httpcodeelberrorpercent",
-      "properties" : {
-        "baseline" : true,
-        "correlation" : true
-      }
-    } ]
+    "type": "ACE"
   }
 }
