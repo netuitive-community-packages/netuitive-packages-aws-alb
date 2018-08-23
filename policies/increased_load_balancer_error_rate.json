@@ -1,25 +1,25 @@
 {
   "policy": {
-    "actions": [
-      {
-        "category": 3,
-        "type": "event"
-      }
-    ],
-    "conditions": [
-      {
-        "analytic": "suddenDeviation",
-        "level": 40,
-        "metric": "netuitive.aws.alb.httpcodeelberrorpercent",
-        "operator": ">"
-      },
-      {
-        "analytic": "actual",
-        "level": 1,
-        "metric": "netuitive.aws.alb.httpcodeelberrorpercent",
-        "operator": ">"
-      }
-    ],
+    "actions": [{
+      "category": 3,
+      "type": "event"
+    }],
+    "conditions": [{
+      "analytic": "suddenDeviation",
+      "level": 30,
+      "metric": "netuitive.aws.alb.httpcodeelb5xxerrorpercent",
+      "operator": ">"
+    }, {
+      "analytic": "actual",
+      "level": 1,
+      "metric": "netuitive.aws.alb.httpcodeelb5xxerrorpercent",
+      "operator": ">"
+    }, {
+      "analytic": "actual",
+      "level": 1000.0,
+      "metric": "aws.applicationelb.requestcount",
+      "operator": ">="
+    }],
     "creatorEmail": "research@metricly.com",
     "description": "This policy will generate a Critial alert for a sudden change in error rates that exceed 40%. You may wish to tune percentage change threshold to better suit your environment.",
     "duration": 300,

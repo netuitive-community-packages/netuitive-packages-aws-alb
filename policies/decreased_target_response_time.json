@@ -1,25 +1,25 @@
 {
   "policy": {
-    "actions": [
-      {
-        "category": 3,
-        "type": "event"
-      }
-    ],
-    "conditions": [
-      {
-        "analytic": "suddenDeviation",
-        "level": 40,
-        "metric": "aws.applicationelb.targetresponsetime",
-        "operator": "<"
-      },
-      {
-        "analytic": "actual",
-        "level": 0.1,
-        "metric": "aws.applicationelb.targetresponsetime",
-        "operator": ">="
-      }
-    ],
+    "actions": [{
+      "category": 3,
+      "type": "event"
+    }],
+    "conditions": [{
+      "analytic": "suddenDeviation",
+      "level": 30,
+      "metric": "aws.applicationelb.targetresponsetime",
+      "operator": "<"
+    }, {
+      "analytic": "actual",
+      "level": 0.1,
+      "metric": "aws.applicationelb.targetresponsetime",
+      "operator": ">="
+    }, {
+      "analytic": "actual",
+      "level": 1000.0,
+      "metric": "aws.applicationelb.requestcount",
+      "operator": ">="
+    }],
     "creatorEmail": "research@metricly.com",
     "description": "This policy will generate a Critical alert when average target response time has a sudden change exceeding 40% and a minimum of 100ms. You may wish to tune percentage change threshold to better suit your environment.",
     "duration": 300,
