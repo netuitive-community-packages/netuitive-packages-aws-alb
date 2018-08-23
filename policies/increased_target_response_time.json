@@ -1,30 +1,37 @@
 {
   "policy": {
-    "actions": [{
-      "category": 3,
-      "type": "event"
-    }],
-    "conditions": [{
-      "analytic": "suddenDeviation",
-      "level": 30,
-      "metric": "aws.applicationelb.targetresponsetime",
-      "operator": ">"
-    }, {
-      "analytic": "suddenDeviation",
-      "level": 30,
-      "metric": "aws.applicationelb.requestcount",
-      "operator": "<"
-    }, {
-      "analytic": "actual",
-      "level": 0.1,
-      "metric": "aws.applicationelb.targetresponsetime",
-      "operator": ">="
-    }, {
-      "analytic": "actual",
-      "level": 1000.0,
-      "metric": "aws.applicationelb.requestcount",
-      "operator": ">="
-    }],
+    "actions": [
+      {
+        "category": 3,
+        "type": "event"
+      }
+    ],
+    "conditions": [
+      {
+        "analytic": "suddenDeviation",
+        "level": 30,
+        "metric": "aws.applicationelb.targetresponsetime",
+        "operator": ">"
+      },
+      {
+        "analytic": "suddenDeviation",
+        "level": 30,
+        "metric": "aws.applicationelb.requestcount",
+        "operator": "<"
+      },
+      {
+        "analytic": "actual",
+        "level": 0.1,
+        "metric": "aws.applicationelb.targetresponsetime",
+        "operator": ">="
+      },
+      {
+        "analytic": "actual",
+        "level": 1000,
+        "metric": "aws.applicationelb.requestcount",
+        "operator": ">="
+      }
+    ],
     "creatorEmail": "research@metricly.com",
     "description": "This policy will generate a Critical alert when average target response time has a sudden change exceeding 40% with a minimum of 100ms and request count having a sudden decrease of more than 30%. These conditions should catch cases where the ALB is having trouble serving requests quickly enough such that overall requests decrease.  You may wish to tune percentage change threshold to better suit your environment.",
     "duration": 300,
