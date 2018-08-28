@@ -18,25 +18,19 @@
   },
   "policies": [{
     "data": {
-      "file": "policies/decreased_request_count.json",
-      "encoding": "application/json",
-      "content": null
-    }
-  }, {
-    "data": {
       "file": "policies/decreased_target_response_time.json",
       "encoding": "application/json",
       "content": null
     }
   }, {
     "data": {
-      "file": "policies/increased_load_balancer_error_rate.json",
+      "file": "policies/high_load_balancer_error_rate.json",
       "encoding": "application/json",
       "content": null
     }
   }, {
     "data": {
-      "file": "policies/increased_request_count.json",
+      "file": "policies/increased_load_balancer_error_rate.json",
       "encoding": "application/json",
       "content": null
     }
@@ -91,10 +85,10 @@
       "content": null
     }
   }, {
-    "data" : {
-      "file" : "dashboards/aws.tag.element.detail.json",
-      "encoding" : "application/json",
-      "content" : null
+    "data": {
+      "file": "dashboards/aws.tag.element.detail.json",
+      "encoding": "application/json",
+      "content": null
     }
-  } ]
+  }]
 }

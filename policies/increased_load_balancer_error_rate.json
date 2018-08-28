@@ -9,15 +9,21 @@
     "conditions": [
       {
         "analytic": "suddenDeviation",
-        "level": 40,
-        "metric": "netuitive.aws.alb.httpcodeelberrorpercent",
+        "level": 30,
+        "metric": "netuitive.aws.alb.httpcodeelb5xxerrorpercent",
         "operator": ">"
       },
       {
         "analytic": "actual",
         "level": 1,
-        "metric": "netuitive.aws.alb.httpcodeelberrorpercent",
+        "metric": "netuitive.aws.alb.httpcodeelb5xxerrorpercent",
         "operator": ">"
+      },
+      {
+        "analytic": "actual",
+        "level": 1000,
+        "metric": "aws.applicationelb.requestcount",
+        "operator": ">="
       }
     ],
     "creatorEmail": "research@metricly.com",

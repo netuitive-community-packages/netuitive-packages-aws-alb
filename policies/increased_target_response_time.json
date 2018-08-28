@@ -9,7 +9,7 @@
     "conditions": [
       {
         "analytic": "suddenDeviation",
-        "level": 40,
+        "level": 30,
         "metric": "aws.applicationelb.targetresponsetime",
         "operator": ">"
       },
@@ -23,6 +23,12 @@
         "analytic": "actual",
         "level": 0.1,
         "metric": "aws.applicationelb.targetresponsetime",
+        "operator": ">="
+      },
+      {
+        "analytic": "actual",
+        "level": 1000,
+        "metric": "aws.applicationelb.requestcount",
         "operator": ">="
       }
     ],
