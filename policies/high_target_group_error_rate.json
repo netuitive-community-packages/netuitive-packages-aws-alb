@@ -15,7 +15,7 @@
       }
     ],
     "creatorEmail": "research@metricly.com",
-    "description": "This policy will generate a Critial alert when there are more that 5% http errors to the Target Group. You may wish to tune this threshold to better suit your environment.",
+    "description": "This policy will generate a Critical alert when there are more that 5% HTTP errors to the Target Group. You may wish to tune this threshold to better suit your environment.",
     "duration": 300,
     "enabled": true,
     "name": "AWS ALB - High Target Group Error Rate",
