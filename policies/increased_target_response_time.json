@@ -1,10 +1,13 @@
 {
   "policy": {
-    "actions": [{
-      "category": 3,
-      "type": "event"
-    }],
-    "conditions": [{
+    "actions": [
+      {
+        "category": 3,
+        "type": "event"
+      }
+    ],
+    "conditions": [
+      {
         "analytic": "suddenDeviation",
         "level": 30,
         "metric": "aws.applicationelb.targetresponsetime",
