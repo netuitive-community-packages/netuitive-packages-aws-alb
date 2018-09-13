@@ -10,14 +10,14 @@
       {
         "analytic": "suddenDeviation",
         "level": 30,
-        "metric": "aws.applicationelb.targetresponsetime",
-        "operator": "<"
+        "metric": "netuitive.aws.applicationelb.5xxpercent",
+        "operator": ">"
       },
       {
         "analytic": "actual",
-        "level": 0.1,
-        "metric": "aws.applicationelb.targetresponsetime",
-        "operator": ">="
+        "level": 1,
+        "metric": "netuitive.aws.applicationelb.5xxpercent",
+        "operator": ">"
       },
       {
         "analytic": "actual",
@@ -27,15 +27,14 @@
       }
     ],
     "creatorEmail": "research@metricly.com",
-    "description": "This policy will generate a Critical alert when average target response time has a sudden change exceeding 40% and a minimum of 100ms. You may wish to tune percentage change threshold to better suit your environment.",
+    "description": "This policy will generate a Critical alert for a sudden change in Target Group error rates that exceed 30% with a minimum of 1000 requests and 1% error rate. You may wish to tune percentage change threshold to better suit your environment.",
     "duration": 300,
     "enabled": true,
-    "name": "AWS ALB - Sudden Decrease Target Response Time",
+    "name": "AWS ALB - Sudden Increase Target Group Error Rate",
     "scope": {
       "elementAttributesAll": true,
       "elementTagsAll": true,
       "elementTypes": [
-        "ALB",
         "Target Group"
       ]
     }

@@ -18,19 +18,25 @@
   },
   "policies": [{
     "data": {
-      "file": "policies/decreased_target_response_time.json",
-      "encoding": "application/json",
-      "content": null
-    }
-  }, {
-    "data": {
       "file": "policies/high_load_balancer_error_rate.json",
       "encoding": "application/json",
       "content": null
     }
   }, {
     "data": {
+      "file": "policies/high_target_group_error_rate.json",
+      "encoding": "application/json",
+      "content": null
+    }
+  }, {
+    "data": {
       "file": "policies/increased_load_balancer_error_rate.json",
+      "encoding": "application/json",
+      "content": null
+    }
+  }, {
+    "data": {
+      "file": "policies/increased_target_group_error_rate.json",
       "encoding": "application/json",
       "content": null
     }

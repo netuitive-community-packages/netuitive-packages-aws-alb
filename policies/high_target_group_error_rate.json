@@ -10,20 +10,20 @@
       {
         "analytic": "actual",
         "level": 5,
-        "metric": "netuitive.aws.alb.httpcodeelb5xxerrorpercent",
+        "metric": "netuitive.aws.applicationelb.5xxpercent",
         "operator": ">"
       }
     ],
     "creatorEmail": "research@metricly.com",
-    "description": "This policy will generate a Critical alert when there are more that 5% HTTP errors to the ALB/Target Group. You may wish to tune this threshold to better suit your environment.",
+    "description": "This policy will generate a Critical alert when there are more that 5% HTTP errors to the Target Group. You may wish to tune this threshold to better suit your environment.",
     "duration": 300,
     "enabled": true,
-    "name": "AWS ALB - High Load Balancer Error Rate",
+    "name": "AWS ALB - High Target Group Error Rate",
     "scope": {
       "elementAttributesAll": true,
       "elementTagsAll": true,
       "elementTypes": [
-        "ALB"
+        "Target Group"
       ]
     }
   }
