@@ -4,6 +4,11 @@ For detailed information on this package, please refer to the [online documentat
 
 ## Release History
 
+
+### Version 1.5.0
+
+* Policy tuning, convert most policies to detect sudden changes
+
 ### Version 1.4.0
 
 * Correct ACE configuration scope entry

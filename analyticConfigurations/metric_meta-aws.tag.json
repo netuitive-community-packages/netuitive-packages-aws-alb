@@ -1,55 +1,56 @@
 {
-  "analyticConfiguration" : {
-    "tenantId" : null,
-    "type" : "METRIC_META",
-    "id" : null,
-    "packageId" : null,
-    "name" : "AWS Target Group",
-    "scope" : {
-      "elementName" : null,
-      "elementType" : "Target Group",
-      "elementTags" : null,
-      "metricMatches" : null
-    },
-    "metrics" : [ {
-      "match" : "aws.applicationelb.requestcount",
-      "properties" : {
-        "sparseDataStrategy" : "ReplaceWithZero",
-        "STATISTIC" : "sum"
-      }
-    }, {
-      "match" : "aws.applicationelb.targetresponsetime",
-      "properties" : {
-        "sparseDataStrategy" : "ReplaceWithZero",
-        "tags" : {
-          "unit" : "s"
+  "analyticConfiguration": {
+    "metrics": [
+      {
+        "match": "aws.applicationelb.requestcount",
+        "properties": {
+          "STATISTIC": "sum",
+          "sparseDataStrategy": "ReplaceWithZero"
+        }
+      },
+      {
+        "match": "aws.applicationelb.targetresponsetime",
+        "properties": {
+          "sparseDataStrategy": "ReplaceWithZero",
+          "tags": {
+            "unit": "s"
+          }
+        }
+      },
+      {
+        "match": "aws.applicationelb.httpcode.*",
+        "properties": {
+          "STATISTIC": "sum",
+          "sparseDataStrategy": "ReplaceWithZero"
+        }
+      },
+      {
+        "match": "aws.applicationelb.targetconnectionerrorcount",
+        "properties": {
+          "STATISTIC": "sum",
+          "sparseDataStrategy": "ReplaceWithZero"
+        }
+      },
+      {
+        "match": "aws.applicationelb\\..*healthlyhostcount",
+        "properties": {
+          "sparseDataStrategy": "ReplaceWithLast"
+        }
+      },
+      {
+        "match": "netuitive.aws.applicationelb\\..*percent",
+        "properties": {
+          "tags": {
+            "unit": "percent"
+          },
+          "validMax": 100
         }
       }
-    }, {
-      "match" : "aws.applicationelb.httpcode.*",
-      "properties" : {
-        "sparseDataStrategy" : "ReplaceWithZero",
-        "STATISTIC" : "sum"
-      }
-    }, {
-      "match" : "aws.applicationelb.targetconnectionerrorcount",
-      "properties" : {
-        "STATISTIC" : "sum",
-        "sparseDataStrategy": "ReplaceWithZero"
-      }
-    }, {
-      "match" : "aws.applicationelb\\..*healthlyhostcount",
-      "properties" : {
-        "sparseDataStrategy" : "ReplaceWithLast"
-      }
-    }, {
-      "match" : "netuitive.aws.applicationelb\\..*percent",
-      "properties" : {
-        "tags" : {
-          "unit" : "percent"
-        },
-        "validMax" : 100
-      }
-    } ]
+    ],
+    "name": "AWS Target Group",
+    "scope": {
+      "elementType": "Target Group"
+    },
+    "type": "METRIC_META"
   }
 }

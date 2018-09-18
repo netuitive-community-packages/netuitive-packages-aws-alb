@@ -1,65 +1,67 @@
 {
-  "analyticConfiguration" : {
-    "tenantId" : null,
-    "type" : "COMPUTED_METRIC",
-    "id" : null,
-    "packageId" : null,
-    "name" : "AWS Target Group",
-    "scope" : {
-      "elementName" : null,
-      "elementType" : "Target Group",
-      "elementTags" : null,
-      "metricMatches" : null
-    },
-    "metrics" : [ {
+  "analyticConfiguration": {
+    "metrics": [
+      {
         "match": "netuitive.aws.applicationelb.httpsuccesspercent",
         "properties": {
           "cml": "100 * (${aws.applicationelb.httpcode_target_2xx_count}.actual + ${aws.applicationelb.httpcode_target_3xx_count}.actual + ${aws.applicationelb.httpcode_target_4xx_count}.actual) / ${aws.applicationelb.requestcount}.actual",
           "fqn": "netuitive.aws.applicationelb.httpsuccesspercent",
           "name": "HTTP Success Rate"
         }
-      }, {
+      },
+      {
         "match": "netuitive.aws.applicationelb.servicereliabilityindex",
         "properties": {
           "cml": "100 * ${aws.applicationelb.httpcode_target_2xx_count}.actual / (${aws.applicationelb.requestcount}.actual - ${aws.applicationelb.httpcode_target_3xx_count}.actual - ${aws.applicationelb.httpcode_target_4xx_count}.actual)",
           "fqn": "netuitive.aws.applicationelb.servicereliabilityindex",
           "name": "Service Reliability Index"
         }
-      }, {
+      },
+      {
         "match": "netuitive.aws.applicationelb.2xxpercent",
         "properties": {
           "cml": "100 * ${aws.applicationelb.httpcode_target_2xx_count}.actual / ${aws.applicationelb.requestcount}.actual",
           "fqn": "netuitive.aws.applicationelb.2xxpercent",
           "name": "HTTP 2xx Percent"
         }
-      }, {
-        "match" : "netuitive.aws.applicationelb.4xxpercent",
-        "properties" : {
+      },
+      {
+        "match": "netuitive.aws.applicationelb.4xxpercent",
+        "properties": {
           "cml": "100 * ${aws.applicationelb.httpcode_target_4xx_count}.actual / ${aws.applicationelb.requestcount}.actual",
-          "fqn" : "netuitive.aws.applicationelb.4xxpercent",
-          "name" : "HTTP 4xx Error Percent"
+          "fqn": "netuitive.aws.applicationelb.4xxpercent",
+          "name": "HTTP 4xx Error Percent"
         }
-      }, {
-        "match" : "netuitive.aws.applicationelb.5xxpercent",
-        "properties" : {
+      },
+      {
+        "match": "netuitive.aws.applicationelb.5xxpercent",
+        "properties": {
           "cml": "100 * ${aws.applicationelb.httpcode_target_5xx_count}.actual / ${aws.applicationelb.requestcount}.actual",
-          "fqn" : "netuitive.aws.applicationelb.5xxpercent",
-          "name" : "HTTP 5xx Error Percent"
+          "fqn": "netuitive.aws.applicationelb.5xxpercent",
+          "name": "HTTP 5xx Error Percent"
         }
-      } , {
-        "match" : "netuitive.aws.applicationelb.totalhttperrors",
-        "properties" : {
-          "expression" : "data['aws.applicationelb.httpcode_target_4xx_count'] == null ? 0 + (data['aws.applicationelb.httpcode_target_5xx_count'] == null ? 0 : data['aws.applicationelb.httpcode_target_5xx_count'].actual) : data['aws.applicationelb.httpcode_target_4xx_count'].actual + (data['aws.applicationelb.httpcode_target_5xx_count'] == null ? 0 : data['aws.applicationelb.httpcode_target_5xx_count'].actual)",
-          "fqn" : "netuitive.aws.applicationelb.totalhttperrors",
-          "name" : "Total HTTP Errors"
+      },
+      {
+        "match": "netuitive.aws.applicationelb.totalhttperrors",
+        "properties": {
+          "expression": "data['aws.applicationelb.httpcode_target_4xx_count'] == null ? 0 + (data['aws.applicationelb.httpcode_target_5xx_count'] == null ? 0 : data['aws.applicationelb.httpcode_target_5xx_count'].actual) : data['aws.applicationelb.httpcode_target_4xx_count'].actual + (data['aws.applicationelb.httpcode_target_5xx_count'] == null ? 0 : data['aws.applicationelb.httpcode_target_5xx_count'].actual)",
+          "fqn": "netuitive.aws.applicationelb.totalhttperrors",
+          "name": "Total HTTP Errors"
         }
-      }, {
-        "match" : "netuitive.aws.applicationelb.httpcodeerrorpercent",
-        "properties" : {
-          "expression" : "data['aws.applicationelb.requestcount'].actual == 0 ? 0 : 100 * (data['netuitive.aws.applicationelb.totalhttperrors'].actual / data['aws.applicationelb.requestcount'].actual)",
-          "fqn" : "netuitive.aws.applicationelb.httpcodeerrorpercent",
-          "name" : "HTTP Error Percent"
+      },
+      {
+        "match": "netuitive.aws.applicationelb.httpcodeerrorpercent",
+        "properties": {
+          "expression": "data['aws.applicationelb.requestcount'].actual == 0 ? 0 : 100 * (data['netuitive.aws.applicationelb.totalhttperrors'].actual / data['aws.applicationelb.requestcount'].actual)",
+          "fqn": "netuitive.aws.applicationelb.httpcodeerrorpercent",
+          "name": "HTTP Error Percent"
         }
-      } ]
+      }
+    ],
+    "name": "AWS Target Group",
+    "scope": {
+      "elementType": "Target Group"
+    },
+    "type": "COMPUTED_METRIC"
   }
 }

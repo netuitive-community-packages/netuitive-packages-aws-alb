@@ -1,65 +1,67 @@
 {
-  "analyticConfiguration" : {
-    "tenantId" : null,
-    "type" : "COMPUTED_METRIC",
-    "id" : null,
-    "packageId" : null,
-    "name" : "AWS ALB",
-    "scope" : {
-      "elementName" : null,
-      "elementType" : "ALB",
-      "elementTags" : null,
-      "metricMatches" : null
+  "analyticConfiguration": {
+    "metrics": [
+      {
+        "match": "netuitive.aws.alb.totaltargethttperrors",
+        "properties": {
+          "expression": "data['aws.applicationelb.httpcode_target_4xx_count'] == null ? 0 + (data['aws.applicationelb.httpcode_target_5xx_count'] == null ? 0 : data['aws.applicationelb.httpcode_target_5xx_count'].actual) : data['aws.applicationelb.httpcode_target_4xx_count'].actual + (data['aws.applicationelb.httpcode_target_5xx_count'] == null ? 0 : data['aws.applicationelb.httpcode_target_5xx_count'].actual)",
+          "fqn": "netuitive.aws.alb.totaltargethttperrors",
+          "name": "Total Target HTTP Errors"
+        }
+      },
+      {
+        "match": "netuitive.aws.alb.totalelbhttperrors",
+        "properties": {
+          "expression": "data['aws.applicationelb.httpcode_elb_4xx_count'] == null ? 0 + (data['aws.applicationelb.httpcode_elb_5xx_count'] == null ? 0 : data['aws.applicationelb.httpcode_elb_5xx_count'].actual) : data['aws.applicationelb.httpcode_elb_4xx_count'].actual + (data['aws.applicationelb.httpcode_elb_5xx_count'] == null ? 0 : data['aws.applicationelb.httpcode_elb_5xx_count'].actual)",
+          "fqn": "netuitive.aws.alb.totalelbhttperrors",
+          "name": "Total ALB HTTP Errors"
+        }
+      },
+      {
+        "match": "netuitive.aws.alb.httpcodeelberrorpercent",
+        "properties": {
+          "expression": "data['aws.applicationelb.requestcount'].actual == 0 ? 0 : 100 * (data['netuitive.aws.alb.totalelbhttperrors'].actual / data['aws.applicationelb.requestcount'].actual)",
+          "fqn": "netuitive.aws.alb.httpcodeelberrorpercent",
+          "name": "ALB HTTP Error Percent"
+        }
+      },
+      {
+        "match": "netuitive.aws.alb.unhealthyhostpercent",
+        "properties": {
+          "expression": "(data['aws.applicationelb.unhealthyhostcount'].actual + data['aws.applicationelb.healthyhostcount'].actual) == 0 ? 0 : (data['aws.applicationelb.unhealthyhostcount'].actual / (data['aws.applicationelb.unhealthyhostcount'].actual + data['aws.applicationelb.healthyhostcount'].actual))*100",
+          "fqn": "netuitive.aws.alb.unhealthyhostpercent",
+          "name": "Unhealthy Host Percent"
+        }
+      },
+      {
+        "match": "netuitive.aws.alb.requestspersecond",
+        "properties": {
+          "expression": "data['aws.applicationelb.requestcount'].actual / 300.0",
+          "fqn": "netuitive.aws.alb.requestspersecond",
+          "name": "Requests per Second"
+        }
+      },
+      {
+        "match": "netuitive.aws.alb.httpcodeelb4xxerrorpercent",
+        "properties": {
+          "expression": "data['aws.applicationelb.requestcount'].actual == 0 ? 0 : 100 * (data['aws.applicationelb.httpcode_elb_4xx_count'].actual / data['aws.applicationelb.requestcount'].actual)",
+          "fqn": "netuitive.aws.alb.httpcodeelb4xxerrorpercent",
+          "name": "ELB HTTP 4xx Error Percent"
+        }
+      },
+      {
+        "match": "netuitive.aws.alb.httpcodeelb5xxerrorpercent",
+        "properties": {
+          "expression": "data['aws.applicationelb.requestcount'].actual == 0 ? 0 : 100 * (data['aws.applicationelb.httpcode_elb_5xx_count'].actual / data['aws.applicationelb.requestcount'].actual)",
+          "fqn": "netuitive.aws.alb.httpcodeelb5xxerrorpercent",
+          "name": "ELB HTTP 5xx Error Percent"
+        }
+      }
+    ],
+    "name": "AWS ALB",
+    "scope": {
+      "elementType": "ALB"
     },
-    "metrics" : [ {
-      "match" : "netuitive.aws.alb.totaltargethttperrors",
-      "properties" : {
-        "expression" : "data['aws.applicationelb.httpcode_target_4xx_count'] == null ? 0 + (data['aws.applicationelb.httpcode_target_5xx_count'] == null ? 0 : data['aws.applicationelb.httpcode_target_5xx_count'].actual) : data['aws.applicationelb.httpcode_target_4xx_count'].actual + (data['aws.applicationelb.httpcode_target_5xx_count'] == null ? 0 : data['aws.applicationelb.httpcode_target_5xx_count'].actual)",
-        "fqn" : "netuitive.aws.alb.totaltargethttperrors",
-        "name" : "Total Target HTTP Errors"
-      }
-    }, {
-      "match" : "netuitive.aws.alb.totalelbhttperrors",
-      "properties" : {
-        "expression" : "data['aws.applicationelb.httpcode_elb_4xx_count'] == null ? 0 + (data['aws.applicationelb.httpcode_elb_5xx_count'] == null ? 0 : data['aws.applicationelb.httpcode_elb_5xx_count'].actual) : data['aws.applicationelb.httpcode_elb_4xx_count'].actual + (data['aws.applicationelb.httpcode_elb_5xx_count'] == null ? 0 : data['aws.applicationelb.httpcode_elb_5xx_count'].actual)",
-        "fqn" : "netuitive.aws.alb.totalelbhttperrors",
-        "name" : "Total ALB HTTP Errors"
-      }
-    }, {
-      "match" : "netuitive.aws.alb.httpcodeelberrorpercent",
-      "properties" : {
-        "expression" : "data['aws.applicationelb.requestcount'].actual == 0 ? 0 : 100 * (data['netuitive.aws.alb.totalelbhttperrors'].actual / data['aws.applicationelb.requestcount'].actual)",
-        "fqn" : "netuitive.aws.alb.httpcodeelberrorpercent",
-        "name" : "ALB HTTP Error Percent"
-      }
-    }, {
-      "match" : "netuitive.aws.alb.unhealthyhostpercent",
-      "properties" : {
-        "expression" : "(data['aws.applicationelb.unhealthyhostcount'].actual + data['aws.applicationelb.healthyhostcount'].actual) == 0 ? 0 : (data['aws.applicationelb.unhealthyhostcount'].actual / (data['aws.applicationelb.unhealthyhostcount'].actual + data['aws.applicationelb.healthyhostcount'].actual))*100",
-        "fqn" : "netuitive.aws.alb.unhealthyhostpercent",
-        "name" : "Unhealthy Host Percent"
-      }
-    }, {
-      "match" : "netuitive.aws.alb.requestspersecond",
-      "properties" : {
-        "expression" : "data['aws.applicationelb.requestcount'].actual / 300.0",
-        "fqn" : "netuitive.aws.alb.requestspersecond",
-        "name" : "Requests per Second"
-      }
-    }, {
-      "match" : "netuitive.aws.alb.httpcodeelb4xxerrorpercent",
-      "properties" : {
-        "expression" : "data['aws.applicationelb.requestcount'].actual == 0 ? 0 : 100 * (data['aws.applicationelb.httpcode_elb_4xx_count'].actual / data['aws.applicationelb.requestcount'].actual)",
-        "fqn" : "netuitive.aws.alb.httpcodeelb4xxerrorpercent",
-        "name" : "ELB HTTP 4xx Error Percent"
-      }
-    }, {
-      "match" : "netuitive.aws.alb.httpcodeelb5xxerrorpercent",
-      "properties" : {
-        "expression" : "data['aws.applicationelb.requestcount'].actual == 0 ? 0 : 100 * (data['aws.applicationelb.httpcode_elb_5xx_count'].actual / data['aws.applicationelb.requestcount'].actual)",
-        "fqn" : "netuitive.aws.alb.httpcodeelb5xxerrorpercent",
-        "name" : "ELB HTTP 5xx Error Percent"
-      }
-    } ]
+    "type": "COMPUTED_METRIC"
   }
 }
