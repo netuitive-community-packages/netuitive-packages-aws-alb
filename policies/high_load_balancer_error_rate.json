@@ -16,7 +16,7 @@
     ],
     "creatorEmail": "research@metricly.com",
     "description": "This policy will generate a Critical alert when there are more that 5% HTTP errors to the ALB/Target Group. You may wish to tune this threshold to better suit your environment.",
-    "duration": 300,
+    "duration": 600,
     "enabled": true,
     "name": "AWS ALB - High Load Balancer Error Rate",
     "scope": {

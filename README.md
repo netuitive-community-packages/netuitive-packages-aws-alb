@@ -4,6 +4,7 @@ For detailed information on this package, please refer to the [online documentat
 
 ## Release History
 
+* Increase the duration of the high error rate polices
 
 ### Version 1.5.0
 
