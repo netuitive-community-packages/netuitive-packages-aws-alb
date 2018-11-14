@@ -6,6 +6,8 @@ For detailed information on this package, please refer to the [online documentat
 
 ### Version next
 
+### Version 1.5.1
+
 * Increase the duration of the high error rate polices
 
 ### Version 1.5.0
