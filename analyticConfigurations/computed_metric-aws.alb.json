@@ -49,8 +49,7 @@
         "match": "netuitive.aws.alb.requestspersecond",
         "properties": {
           "expressions": [
-            "${aws.applicationelb.requestcount}.actual / 300.0",
-            "0"
+            "${aws.applicationelb.requestcount}.actual / 300.0"
           ],
           "fqn": "netuitive.aws.alb.requestspersecond",
           "name": "Requests per Second"

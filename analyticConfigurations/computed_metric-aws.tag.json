@@ -27,8 +27,7 @@
         "match": "netuitive.aws.applicationelb.2xxpercent",
         "properties": {
           "expressions": [
-            "100 * ${aws.applicationelb.httpcode_target_2xx_count}.actual / ${aws.applicationelb.requestcount}.actual",
-            "0"
+            "100 * ${aws.applicationelb.httpcode_target_2xx_count}.actual / ${aws.applicationelb.requestcount}.actual"
           ],
           "fqn": "netuitive.aws.applicationelb.2xxpercent",
           "name": "HTTP 2xx Percent"
@@ -38,8 +37,7 @@
         "match": "netuitive.aws.applicationelb.4xxpercent",
         "properties": {
           "expressions": [
-            "100 * ${aws.applicationelb.httpcode_target_4xx_count}.actual / ${aws.applicationelb.requestcount}.actual",
-            "0"
+            "100 * ${aws.applicationelb.httpcode_target_4xx_count}.actual / ${aws.applicationelb.requestcount}.actual"
           ],
           "fqn": "netuitive.aws.applicationelb.4xxpercent",
           "name": "HTTP 4xx Error Percent"
@@ -49,8 +47,7 @@
         "match": "netuitive.aws.applicationelb.5xxpercent",
         "properties": {
           "expressions": [
-            "100 * ${aws.applicationelb.httpcode_target_5xx_count}.actual / ${aws.applicationelb.requestcount}.actual",
-            "0"
+            "100 * ${aws.applicationelb.httpcode_target_5xx_count}.actual / ${aws.applicationelb.requestcount}.actual"
           ],
           "fqn": "netuitive.aws.applicationelb.5xxpercent",
           "name": "HTTP 5xx Error Percent"
