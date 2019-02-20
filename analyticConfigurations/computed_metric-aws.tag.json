@@ -4,7 +4,10 @@
       {
         "match": "netuitive.aws.applicationelb.httpsuccesspercent",
         "properties": {
-          "cml": "100 * (${aws.applicationelb.httpcode_target_2xx_count}.actual + ${aws.applicationelb.httpcode_target_3xx_count}.actual + ${aws.applicationelb.httpcode_target_4xx_count}.actual) / ${aws.applicationelb.requestcount}.actual",
+          "expressions": [
+            "100 * (${aws.applicationelb.httpcode_target_2xx_count}.actual + ${aws.applicationelb.httpcode_target_3xx_count}.actual + ${aws.applicationelb.httpcode_target_4xx_count}.actual) / ${aws.applicationelb.requestcount}.actual",
+            "0"
+          ],
           "fqn": "netuitive.aws.applicationelb.httpsuccesspercent",
           "name": "HTTP Success Rate"
         }
@@ -12,7 +15,10 @@
       {
         "match": "netuitive.aws.applicationelb.servicereliabilityindex",
         "properties": {
-          "cml": "100 * ${aws.applicationelb.httpcode_target_2xx_count}.actual / (${aws.applicationelb.requestcount}.actual - ${aws.applicationelb.httpcode_target_3xx_count}.actual - ${aws.applicationelb.httpcode_target_4xx_count}.actual)",
+          "expressions": [
+            "100 * ${aws.applicationelb.httpcode_target_2xx_count}.actual / (${aws.applicationelb.requestcount}.actual - ${aws.applicationelb.httpcode_target_3xx_count}.actual - ${aws.applicationelb.httpcode_target_4xx_count}.actual)",
+            "0"
+          ],
           "fqn": "netuitive.aws.applicationelb.servicereliabilityindex",
           "name": "Service Reliability Index"
         }
@@ -20,7 +26,9 @@
       {
         "match": "netuitive.aws.applicationelb.2xxpercent",
         "properties": {
-          "cml": "100 * ${aws.applicationelb.httpcode_target_2xx_count}.actual / ${aws.applicationelb.requestcount}.actual",
+          "expressions": [
+            "100 * ${aws.applicationelb.httpcode_target_2xx_count}.actual / ${aws.applicationelb.requestcount}.actual"
+          ],
           "fqn": "netuitive.aws.applicationelb.2xxpercent",
           "name": "HTTP 2xx Percent"
         }
@@ -28,7 +36,9 @@
       {
         "match": "netuitive.aws.applicationelb.4xxpercent",
         "properties": {
-          "cml": "100 * ${aws.applicationelb.httpcode_target_4xx_count}.actual / ${aws.applicationelb.requestcount}.actual",
+          "expressions": [
+            "100 * ${aws.applicationelb.httpcode_target_4xx_count}.actual / ${aws.applicationelb.requestcount}.actual"
+          ],
           "fqn": "netuitive.aws.applicationelb.4xxpercent",
           "name": "HTTP 4xx Error Percent"
         }
@@ -36,7 +46,9 @@
       {
         "match": "netuitive.aws.applicationelb.5xxpercent",
         "properties": {
-          "cml": "100 * ${aws.applicationelb.httpcode_target_5xx_count}.actual / ${aws.applicationelb.requestcount}.actual",
+          "expressions": [
+            "100 * ${aws.applicationelb.httpcode_target_5xx_count}.actual / ${aws.applicationelb.requestcount}.actual"
+          ],
           "fqn": "netuitive.aws.applicationelb.5xxpercent",
           "name": "HTTP 5xx Error Percent"
         }
@@ -44,7 +56,10 @@
       {
         "match": "netuitive.aws.applicationelb.totalhttperrors",
         "properties": {
-          "expression": "data['aws.applicationelb.httpcode_target_4xx_count'] == null ? 0 + (data['aws.applicationelb.httpcode_target_5xx_count'] == null ? 0 : data['aws.applicationelb.httpcode_target_5xx_count'].actual) : data['aws.applicationelb.httpcode_target_4xx_count'].actual + (data['aws.applicationelb.httpcode_target_5xx_count'] == null ? 0 : data['aws.applicationelb.httpcode_target_5xx_count'].actual)",
+          "expressions": [
+            "${aws.applicationelb.httpcode_target_4xx_count}.actual + ${aws.applicationelb.httpcode_target_5xx_count}.actual",
+            "0"
+          ],
           "fqn": "netuitive.aws.applicationelb.totalhttperrors",
           "name": "Total HTTP Errors"
         }
@@ -52,7 +67,10 @@
       {
         "match": "netuitive.aws.applicationelb.httpcodeerrorpercent",
         "properties": {
-          "expression": "data['aws.applicationelb.requestcount'].actual == 0 ? 0 : 100 * (data['netuitive.aws.applicationelb.totalhttperrors'].actual / data['aws.applicationelb.requestcount'].actual)",
+          "expressions": [
+            "100 * ${netuitive.aws.applicationelb.totalhttperrors}.actual / ${aws.applicationelb.requestcount}.actual",
+            "0"
+          ],
           "fqn": "netuitive.aws.applicationelb.httpcodeerrorpercent",
           "name": "HTTP Error Percent"
         }

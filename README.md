@@ -6,6 +6,8 @@ For detailed information on this package, please refer to the [online documentat
 
 ### Version next
 
+* Convert computed metrics to new format
+
 ### Version 1.5.1
 
 * Increase the duration of the high error rate polices
