@@ -2,6 +2,8 @@
 
 ### Version next
 
+* Removed ALB healthy and unhealthy host count metric references
+
 ### Version 1.6.0
 
 * Convert computed metrics to new format
