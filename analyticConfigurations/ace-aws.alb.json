@@ -44,20 +44,6 @@
         }
       },
       {
-        "match": "aws.applicationelb.healthyhostcount",
-        "properties": {
-          "baseline": false,
-          "correlation": false
-        }
-      },
-      {
-        "match": "aws.applicationelb.unhealthyhostcount",
-        "properties": {
-          "baseline": false,
-          "correlation": false
-        }
-      },
-      {
         "match": "aws.applicationelb.targetresponsetime",
         "properties": {
           "baseline": true,
@@ -125,13 +111,6 @@
         "properties": {
           "baseline": true,
           "correlation": true
-        }
-      },
-      {
-        "match": "netuitive.aws.alb.unhealthyhostpercent",
-        "properties": {
-          "baseline": false,
-          "correlation": false
         }
       },
       {

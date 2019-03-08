@@ -35,17 +35,6 @@
         }
       },
       {
-        "match": "netuitive.aws.alb.unhealthyhostpercent",
-        "properties": {
-          "expressions": [
-            "100 * ${aws.applicationelb.unhealthyhostcount}.actual / (${aws.applicationelb.unhealthyhostcount}.actual + ${aws.applicationelb.healthyhostcount}.actual)",
-            "0"
-          ],
-          "fqn": "netuitive.aws.alb.unhealthyhostpercent",
-          "name": "Unhealthy Host Percent"
-        }
-      },
-      {
         "match": "netuitive.aws.alb.requestspersecond",
         "properties": {
           "expressions": [
