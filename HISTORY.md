@@ -2,6 +2,8 @@
 
 ### Version next
 
+### Version 1.7.1
+
 * Added requests per second computed metric for Target Groups
 
 ### Version 1.7.0
