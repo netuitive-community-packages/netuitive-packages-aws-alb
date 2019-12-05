@@ -2,6 +2,10 @@
 
 ### Version next
 
+### Version 1.7.1
+
+* Added requests per second computed metric for Target Groups
+
 ### Version 1.7.0
 
 * Removed ALB healthy and unhealthy host count metric references
