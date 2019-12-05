@@ -74,7 +74,7 @@
           "fqn": "netuitive.aws.applicationelb.httpcodeerrorpercent",
           "name": "HTTP Error Percent"
         }
-      }, 
+      },
       {
         "match": "netuitive.aws.applicationelb.requestspersecond",
         "properties": {
