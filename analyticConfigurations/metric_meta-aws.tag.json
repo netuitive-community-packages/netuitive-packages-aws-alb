@@ -45,6 +45,14 @@
           },
           "validMax": 100
         }
+      },
+      {
+        "match": "netuitive.aws.applicationelb.requestspersecond",
+        "properties": {
+          "tags": {
+            "unit": "ops"
+          }
+        }
       }
     ],
     "name": "AWS Target Group",

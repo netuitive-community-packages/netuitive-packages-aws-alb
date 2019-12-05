@@ -74,6 +74,16 @@
           "fqn": "netuitive.aws.applicationelb.httpcodeerrorpercent",
           "name": "HTTP Error Percent"
         }
+      }, 
+      {
+        "match": "netuitive.aws.applicationelb.requestspersecond",
+        "properties": {
+          "expressions": [
+            "${aws.applicationelb.requestcount}.actual / 300.0"
+          ],
+          "fqn": "netuitive.aws.applicationelb.requestspersecond",
+          "name": "Requests per Second"
+        }
       }
     ],
     "name": "AWS Target Group",
